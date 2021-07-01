@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    {% include 'snippets/style.html' %}
+</head>
+
+<body>
+    {% include 'snippets/topbar.html' %}
+    <div class="container-dashboard">
+        <h1>Halaman {{judul}}</h1>
+        <form class="form-tambah" action='{{action}}' method="POST">
+            {% csrf_token %}
+
+            {% if name == 'tambah' %}
+            <label for="username">username</label>
+            <input type="text" name="username" id="username" value="{{username}}" required>
+            <label for="email">email</label>
+            <input type="email" name="email" id="email" value="{{email}}" required>
+            {% endif %}
+            <label for="first_name">first name</label>
+            <input type="text" name="first_name" id="first_name" value="{{first_name}}" required>
+            <label for="last_name">last name</label>
+            <input type="text" name="last_name" id="last_name" value="{{last_name}}" required>
+
+            <label for="password">password</label>
+            <input type="password" name="password" id="password" value="{{pasword}}" placeholder="{{placeholder}}">
+            <input type="hidden" name="id" id="id" value="{{id}}" required>
+            <button style="margin: 0%;" type="submit">kirim</button>
+            <button><a href="/user">batal</a></button>
+        </form>
+    </div>
+    {% include 'snippets/navbar.html' %}
+
+</body>
+
+</html>

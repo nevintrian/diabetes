@@ -1,0 +1,28 @@
+<div class="topbar">
+    <ul class="judul">
+        <li> <a href="/">Deteksi Diabetes Web</a>
+            <div class="line"></div>
+        </li>
+    </ul>
+    <ul>
+        <li> <a href="/">Home</a>
+            <div class="line"></div>
+        </li>
+        <li> <a href="/tutorial">Tutorial</a>
+            <div class="line"></div>
+        </li>
+
+        {% if request.user.is_anonymous %}
+        <li> <a href="/login">Login</a>
+            <div class="line"></div>
+        </li>
+
+        {% else %}
+        <li> <a href="/dashboard">{{user}}</a>
+            <div class="line"></div>
+        </li>
+        {% endif %}
+
+
+    </ul>
+</div>

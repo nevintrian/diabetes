@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil</title>
+    {% include 'snippets/style.html' %}
+</head>
+
+<body>
+    {% include 'snippets/topbar.html' %}
+    <div class="container hasil">
+        <h1>Hasil</h1>
+        <p>Diabetes adalah penyakit kronis yang ditandai dengan ciri-ciri berupa tingginya kadar gula atau glukosa
+            darah. Glukosa merupakan sumber energi utama bagi sel tubuh manusia. Glukosa yang menumpuk di dalam darah
+            akibat tidak diserap sel tubuh dengan baik dapat menimbulkan berbagai gangguan organ tubuh. Jika diabetes
+            tidak dikontrol dengan baik, dapat timbul berbagai komplikasi yang membahayakan nyawa penderita. Kami
+            membuat aplikasi untuk mendeteksi diabetes berdasarkan iris mata untuk mengetahui diagnosis penyakit
+            diabetes.</p><br>
+        <center>
+            <div class="mata-input">
+                <img src="/media/{{nama}}" alt="">
+            </div>
+        </center>
+        <h2>Kesimpulan : {{show_hasil}}</h2><br><br>
+    </div>
+    {% include 'snippets/footer.html' %}
+</body>
+
+</html>

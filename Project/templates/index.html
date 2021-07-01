@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% include 'snippets/style.html' %}
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    {% include 'snippets/topbar.html' %}
+    <div class="container">
+        <h1>Halaman Home</h1>
+        <p>Diabetes adalah penyakit kronis yang ditandai dengan ciri-ciri berupa tingginya kadar gula atau glukosa
+            darah. Glukosa merupakan sumber energi utama bagi sel tubuh manusia. Glukosa yang menumpuk di dalam darah
+            akibat tidak diserap sel tubuh dengan baik dapat menimbulkan berbagai gangguan organ tubuh. Jika diabetes
+            tidak dikontrol dengan baik, dapat timbul berbagai komplikasi yang membahayakan nyawa penderita. Kami
+            membuat aplikasi untuk mendeteksi diabetes berdasarkan iris mata untuk mengetahui diagnosis penyakit
+            diabetes. Tutorial aplikasi dapat dilihat <a href="/tutorial">disini</a></p>
+
+        <center>
+            <h2>masukkan gambar mata yang sudah di crop (32x32 px)</h2>
+            <form action="/hasil/action" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mata-input">
+                    <img id="blah" />
+                </div><br>
+                <input type='file' name="gambar" id="gambar" onchange="readURL(this);" /><br><br>
+                <button type="submit">kirim</button><br><br>
+            </form>
+        </center>
+    </div>
+    {% include 'snippets/footer.html' %}
+</body>
+
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .width(250)
+                    .height(250)
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
+</html>

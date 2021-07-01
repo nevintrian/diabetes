@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    {% include 'snippets/style.html' %}
+</head>
+
+<body>
+    {% include 'snippets/topbar.html' %}
+    <div class="container-dashboard">
+        <h1>Halaman {{judul}}</h1>
+        <form class="form-tambah" action="{{action}}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="">nama</label>
+            <input type="text" name="nama" id="nama" value="{{nama}}" required>
+            <label for="">status</label>
+            <input type="number" name="status" id="status" value="{{status}}" required>
+            {% if name == 'tambah' %}
+            <label for="gambar">gambar</label>
+            <input type="file" name="gambar" id="gambar" required>
+            {% endif %}
+            <input type="hidden" name="id" id="id" value="{{id}}" required>
+            <button style="margin: 0%;" type="submit">kirim</button>
+            <button><a href="/mata">batal</a></button>
+        </form>
+    </div>
+    {% include 'snippets/navbar.html' %}
+
+</body>
+
+</html>

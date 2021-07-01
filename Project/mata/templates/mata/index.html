@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mata</title>
+    {% include 'snippets/style.html' %}
+</head>
+
+<body>
+    {% include 'snippets/topbar.html' %}
+    <div class="container-dashboard">
+        {% include 'snippets/alert.html' %}
+        <h1>Halaman Mata</h1>
+        <button><a href="/mata/create">tambah</a></button>
+        <form class="search" action="/mata/search" method="POST">
+            {% csrf_token %}
+            <label for="search">search : </label>
+            <input type="text" name="search" id="search">
+            <button>search</button>
+        </form>
+        <table class="table-user" border="1">
+            <thead>
+                <tr>
+                    <th>no</th>
+                    <th>nama</th>
+                    <th>entropi</th>
+                    <th>energi</th>
+                    <th>homogenitas</th>
+                    <th>kontras</th>
+                    <th>status</th>
+                    <th>gambar</th>
+                    <th>action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{row.nama}}</td>
+                    <td>{{row.entropi}}</td>
+                    <td>{{row.energi}}</td>
+                    <td>{{row.homogenitas}}</td>
+                    <td>{{row.kontras}}</td>
+                    <td>{{row.status}}</td>
+                    <td><img style="width: 50px; height: 50px; object-fit: cover;" src="/media/{{row.gambar}}" alt="">
+                    </td>
+                    <td>
+                        <button><a href="/mata/update/{{row.id}}">update</a></button>
+                        <button><a href="/mata/delete/{{row.id}}" onclick="return confirm_delete()">delete</a></button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button>jumlah data : {{count}}</button>
+        <button style="margin: 0%;">cetak data</button>
+        <div class="pagination" style="display: inline; position: absolute; right: 0; margin-right: 55px;">
+            <span class="step-links">
+                {% if data.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ data.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ data.number }} of {{ data.paginator.num_pages }}.
+                </span>
+
+                {% if data.has_next %}
+                <a href="?page={{ data.next_page_number }}">next</a>
+                <a href="?page={{ data.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+    {% include 'snippets/navbar.html' %}
+
+</body>
+<script type="text/javascript">
+    function confirm_delete() {
+        return confirm('are you sure?')
+    }
+</script>
+
+</html>

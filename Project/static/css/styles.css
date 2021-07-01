@@ -1,0 +1,263 @@
+/* body */
+body {
+  background-color: rgb(238, 238, 238);
+  font-family: "Courier New", Courier, monospace;
+}
+button {
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* alert */
+.info {
+  width: 102%;
+  background-color: lightblue;
+  padding: 5px;
+  border-radius: 5px;
+  list-style-type: none;
+  margin-left: -36px;
+}
+
+.error {
+  width: 102%;
+  background-color: lightcoral;
+  padding: 5px;
+  border-radius: 5px;
+  list-style-type: none;
+  margin-left: -36px;
+}
+
+/* topbar */
+.topbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 50px;
+  z-index: 10;
+  background-color: rgb(105, 105, 105);
+  border-bottom: 5px solid rgb(201, 201, 201);
+  overflow: hidden;
+}
+
+.topbar .judul {
+  margin-right: 610px;
+  margin-left: 0;
+}
+.topbar ul {
+  margin-left: 175px;
+  display: inline-block;
+}
+.topbar ul li {
+  display: inline-block;
+}
+.topbar ul li a {
+  text-decoration: none;
+  color: lightgrey;
+  margin-right: 20px;
+}
+.topbar ul li a:hover {
+  color: white;
+}
+.topbar ul li:hover .line {
+  background-color: lightblue;
+  width: auto;
+  transform: rotateX(90deg);
+}
+
+.line {
+  margin-top: 5px;
+  height: 2px;
+  width: 0px;
+  margin-right: 18px;
+  background-color: white;
+  transition: 1s;
+}
+
+/* container */
+.container {
+  position: relative;
+  width: 960px;
+  margin: auto;
+  color: rgb(82, 82, 82);
+  background-color: white;
+  margin-top: 50px;
+  text-align: justify;
+  padding: 5px;
+}
+
+/* footer */
+.footer {
+  background-color: rgb(105, 105, 105);
+  border-top: 5px solid rgb(201, 201, 201);
+  color: lightgrey;
+  text-align: center;
+
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+/* sidebar */
+.sidebar {
+  width: 200px;
+  height: 400px;
+  border: 1px solid lightgrey;
+  background-color: white;
+  z-index: 1;
+  padding-left: -50px;
+  float: left;
+  margin-top: 60px;
+  margin-left: 5px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.container-dashboard {
+  width: 1050px;
+  color: rgb(82, 82, 82);
+  background-color: white;
+  margin-top: 60px;
+  float: right;
+  margin-right: 30px;
+  text-align: justify;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  padding-bottom: 5px;
+  padding: 10px;
+}
+.container-dashboard p {
+  margin: 5px;
+}
+.container-dashboard h1 {
+  margin: 5px;
+  margin-bottom: 10px;
+}
+.container-dashboard button {
+  margin: 5px;
+}
+.sidebar ul a {
+  text-decoration: none;
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+  color: darkslategrey;
+}
+.container-dashboard a {
+  text-decoration: none;
+  color: darkslategrey;
+}
+
+/* login */
+.container-home {
+  position: relative;
+  width: 960px;
+  height: 550px;
+  margin: auto;
+  margin-top: 50px;
+  text-align: justify;
+}
+
+.login {
+  margin-top: 5px;
+  float: left;
+  height: 450px;
+  width: 450px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid lightgrey;
+  text-align: left;
+}
+.register {
+  margin-top: 5px;
+  float: right;
+  height: 450px;
+  width: 450px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid lightgrey;
+  text-align: left;
+}
+.register input {
+  width: 98%;
+}
+.login input {
+  width: 98%;
+}
+
+/* table user */
+.table-user {
+  margin: 5px;
+  width: 99%;
+  border-collapse: collapse;
+}
+
+.table-user tr td {
+  padding: 10px;
+}
+.table-user tr th {
+  padding: 10px;
+}
+
+/* search */
+.container-dashboard .search {
+  text-align: right;
+  float: right;
+}
+
+/* dashboard */
+.container-dashboard .dashboard-box {
+  width: 220px;
+  height: 100px;
+  background-color: rgb(238, 238, 238);
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  margin: 5px;
+  float: left;
+  line-height: 90px;
+}
+.form-tambah {
+  margin: 5px;
+}
+.form-tambah input {
+  width: 99%;
+  display: block;
+  margin-bottom: 10px;
+  margin-top: 3px;
+}
+
+/* tutorial mata */
+.mata {
+  width: 250px;
+  height: 250px;
+}
+.tutorial {
+  width: 960px;
+  background-color: white;
+  text-align: center;
+}
+
+/* halaman home */
+.mata-input {
+  height: 250px;
+  width: 250px;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+
+.mata-input img {
+  height: 250px;
+  width: 250px;
+  border-radius: 10px;
+}
+
+/* hasil */
+.hasil {
+  padding: 5px;
+  text-align: justify;
+}
+.hasil h2 {
+  text-align: center;
+}

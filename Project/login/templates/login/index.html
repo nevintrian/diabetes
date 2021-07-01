@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% include 'snippets/style.html' %}
+</head>
+
+<body>
+    {% include 'snippets/topbar.html' %}
+    <div class="container-home"><br>
+        {% include 'snippets/alert.html' %}
+        <div class="login">
+            <h1>Halaman Login</h1>
+            <form action="/login/login_action" method="POST">
+                {% csrf_token %}
+                <label for="username">username</label><br>
+                <input type="text" name="username" id="username" required><br><br>
+                <label for="password">password</label><br>
+                <input type="password" name="password" id="password" required><br><br>
+                <button type="submit">login</button>
+            </form>
+        </div>
+
+        <div class="register">
+            <h1>Halaman Register</h1>
+            <form action="/login/register_action" method="POST">
+                {% csrf_token %}
+                <label for="email">email</label><br>
+                <input type="email" name="email" id="email"><br><br>
+                <label for="username">username</label><br>
+                <input type="username" name="username" id="username" required><br><br>
+                <label for="password">password</label><br>
+                <input type="password" name="password" id="password" required><br><br>
+                <label for="first_name">first name</label><br>
+                <input type="first_name" name="first_name" id="first_name" required><br><br>
+                <label for="last_name">last name</label><br>
+                <input type="last_name" name="last_name" id="last_name" required><br><br>
+                <button type="submit">register</button>
+            </form>
+        </div>
+    </div>
+    {% include 'snippets/footer.html' %}
+
+</body>
+
+</html>

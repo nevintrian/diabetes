@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    {% include 'snippets/style.html' %}
+</head>
+
+<body>
+    {% include 'snippets/topbar.html' %}
+    <div class="container-dashboard">
+        {% include 'snippets/alert.html' %}
+        <h1>Halaman Dashboard</h1>
+        <div class="dashboard-box">
+            <p>jumlah data user : {{user_count}}</p>
+        </div>
+        <div class="dashboard-box">
+            <p>jumlah data mata : {{mata_count}}</p>
+        </div>
+        <div class="dashboard-box">
+            <p>jumlah data uji: {{pengujian_count}}</p>
+        </div>
+        <div class="dashboard-box">
+            <p>akurasi uji: {{akurasi}}%</p>
+        </div>
+    </div>
+    {% include 'snippets/navbar.html' %}
+
+
+</body>
+
+</html>

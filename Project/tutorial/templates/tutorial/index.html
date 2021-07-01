@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial</title>
+    {% include 'snippets/style.html' %}
+</head>
+
+<body>
+    {% include 'snippets/topbar.html' %}
+    <div class="container">
+        <div class="tutorial">
+            <h1>Tutorial Menggunakan Aplikasi</h1>
+            <p>1. Foto gambar mata menggunakan kamera atau alat khusus seperti gambar berikut :</p>
+            <img class="mata" src="{% static 'img/tutorial/mata.bmp' %}" alt="">
+            <p>2. Crop foto mata pada bagian ROI, berukuran 32x32 pixel seperti gambar berikut :</p>
+            <img class="mata" src="{% static 'img/tutorial/roi.jpg' %}" alt="">
+            <img class="mata" src="{% static 'img/tutorial/mata_select.jpg' %}" alt="">
+            <p>3. Untuk crop gambar dapat dilakukan <a href="https://www.iloveimg.com/crop-image">disini</a></p>
+            <p>4. Setelah dicrop, gambar akan menjadi sebagai berikut :</p>
+            <img class="mata" src="{% static 'img/tutorial/crop.bmp' %}" alt="">
+            <p>5. Masukkan gambar pada form input gambar di menu home</p>
+            <p>6. Silahkan tunggu, gambar akan diproses dan hasil akan ditampilkan, apakah anda terdeteksi diabetes atau
+                tidak</p>
+        </div>
+    </div>
+    {% include 'snippets/footer.html' %}
+
+</body>
+
+</html>
