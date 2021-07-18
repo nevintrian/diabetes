@@ -1,0 +1,62 @@
+.stepper .stepper-arrow {
+	width: 0px;
+	height: 0px;
+	right: 0px;
+}
+
+.stepper-arrow {
+	opacity: 0;
+}
+
+table.dataTable {
+	margin-top: -1em !important;
+	margin-bottom: -1em !important;
+}
+
+div.dataTables_info {
+	margin-bottom: -5em;
+}
+.navbar img {
+	border: 3px solid #888888;
+}
+
+.image {
+	width: 500px;
+}
+
+.crop {
+	width: 200px;
+}
+
+p {
+	margin-top: 20px;
+	font-size: 14px;
+	text-align: justify;
+}
+.tutorial {
+	text-align: center;
+}
+
+.kotak {
+	width: 200px;
+	height: 200px;
+	border: 1px solid rgba(136, 136, 136, 0.5);
+	box-shadow: 1px 2px rgba(136, 136, 136, 0.5);
+	border-radius: 10px;
+}
+#blah {
+	border-radius: 10px;
+}
+.navbars {
+	background-color: rgb(150, 150, 150);
+}
+
+.footer {
+	background-image: none;
+	background-color: rgb(115, 115, 115);
+	margin-top: -5px;
+}
+
+.header {
+	color: white;
+}
